@@ -1,0 +1,44 @@
+{% extends 'portal/base.html' %}
+{% block dinamico %}
+
+
+{% for post in posts %}
+{% if user.is_authenticated and post.published_date == null %}
+
+<div class="post_noticia">
+    <p class="dta_publ">Data de publicação: {{post.published_date}}</p>
+
+    <center>
+        {% if post.photo %}
+        <img class="image" src="{{post.photo.url}}" alt="..."/><br>
+        {% endif %}
+        <h1><p>{{post.area}}</p></h1>
+        <h2><a href="{% url 'post_detail_noticia' pk=post.pk %}">{{post.title}}</a></h2>
+    </center>
+    
+    <p>{{post.text|linebreaksbr}}</p> 
+</div>
+
+{% elif post.published_date %}
+
+<div class="post_noticia">
+    <p class="dta_publ">Data de publicação: {{post.published_date}} <br>Publicado por: {{post.author}} </p>
+    
+    <center>
+        {% if post.photo %}
+        <img class="image" src="{{post.photo.url}}" alt="..."/><br><br>
+        {% endif %}
+        
+        <h1><p>{{post.area}}</p></h1>
+        <h2><a href="{% url 'post_detail_noticia' pk=post.pk %}">{{post.title}}</a></h2>
+    </center>
+    {% if user.is_authenticated %}
+    <p>{{post.text|linebreaksbr}}</p>
+    <a class="btnEditN" href  ="{% url 'post_edit_noticia' pk=post.pk %}"><button>Editar Noticia</button></a>
+    {% endif %}
+</div>
+
+{% endif %}
+
+{% endfor %}
+{% endblock %}

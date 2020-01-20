@@ -1,0 +1,126 @@
+.teste{
+	text-align: center;
+}
+.noticia{
+	text-align: center;
+	left: 90px; /* posiciona a 90px para a esquerda */ 
+	top: 100%; /* posiciona a 70px para baixo */
+}
+.area{
+	text-align: center;
+	left: 90px; /* posiciona a 90px para a esquerda */ 
+	top: 100%; /* posiciona a 70px para baixo */	
+}
+.imagem{
+	width: 150px;
+	border: 1px solid gray;
+	float:left; 
+	margin-right:10px;
+	margin-bottom:5px;
+}
+.list{
+    border-top: 10px solid #7c7; 
+    background-color: #828282;     
+    color: #050; 
+    font-family:Arial, Helvetica, sans-serif;
+    min-height: 3em;
+    text-align: center;
+    line-height:120px;
+
+}
+.postarea{
+	border-top: 10px solid red; 
+    background-color: #6495ED;     
+    color: blue; 
+    font-family:Arial, Helvetica, sans-serif;
+    min-height: 5px;
+    text-align: center;
+    line-height:120px;
+}
+.postnoticia{
+	border-top: 10px solid yellow; 
+    background-color: #ADD8E6;     
+    color: #7B68EE; 
+    font-family:Arial, Helvetica, sans-serif;
+    min-height: 5px;
+    text-align: center;
+    line-height:120px;
+}
+/*.desc_area{
+    border: 20px solid #E6E6E6; 
+    margin-left: 1px;  
+    width: 100px; 
+    border-left: 4px solid #E6E6E6; 
+    border-right: 10px solid #E6E6E6; 
+    border-bottom: 10px solid #E6E6E6; 
+    padding: 100px; 
+}
+.desc{
+    padding: 10px;    
+}
+.image{
+    width: 20%;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+    text-indent: 0;
+    border: thin silver solid;
+    margin: 0.5em;
+    padding: 0.5em;
+}*/
+/*.lista{
+    border-top: 10px solid red; 
+    background-color: #efe;     
+    color: black; 
+    font-family:Arial, Helvetica, sans-serif;
+    min-height: 3em;
+    text-align: left;
+    line-height:120px;
+}*/
+.dta_publ{
+   text-align: right;
+}
+.rodape{
+    background-color: black;
+    padding: 10px;
+    margin: 15px 0px 15px 0px;
+    color: white;
+    float:left; 
+    width: 100%;
+  
+}
+body{
+    background-color: #FFDEAD;
+}
+.post_noticia{
+    background-color: #CFCFCF;
+    padding: 50px;
+    margin: 15px 80px 15px 80px;
+}
+.DatePublished{
+    float: right;
+}
+.noticia_esporte a{
+    color: green;
+}
+color: red;
+
+.noticia_politica a{
+
+}
+.noticia_politica{
+    width: 50%;
+    padding-left: 10px;
+    color: red;
+    float: left;
+}
+.pg_visitante{
+    border-color: blue;
+    display: inline;
+    width: 32%;
+    float: left;
+    margin-left: 10px;
+    color: red;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}

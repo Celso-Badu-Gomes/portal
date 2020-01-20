@@ -1,0 +1,20 @@
+{% extends 'portal/base.html' %}
+{% block dinamico %}
+
+{% for area in areas %}
+
+	<div class="pg_visitante">
+		<h2 style="color: {{ area.cor }};">{{ area.descricao }}</h2>
+			{% for post in posts %} 
+				{% if post.area.pk == area.pk %}
+					{% if post.published_date %}
+						<h3><a style="color: {{ area.cor }};" href="{% url 'post_detail_noticia' pk=post.pk %}"> {{post.title }}<a></h3>
+						{% if post.photo %}
+        					<img class="image" src="{{post.photo.url}}" alt="..."/><br><br>
+        				{% endif %}					
+					{% endif %} 
+				{% endif %}
+			{% endfor %}
+	</div>
+{% endfor %}
+{% endblock %}

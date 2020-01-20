@@ -1,0 +1,27 @@
+{% extends 'portal/base.html' %}
+
+{% block dinamico %}
+
+	<div class="desc_area">
+		{% if user.is_authenticated %}<br><br>
+
+		{% endif %}
+
+		{% if post.descricao %}
+			<div class="desc">
+				{{post.descricao}}
+			</div><br><br>
+			
+			<a href  ="{% url 'post_edit' pk=post.pk %}"><button>Editar Area</button></a>
+			<a onclick="return confirm('Tem certeza?')" href="{% url 'post_remove' pk=post.pk %}"><button>Deletar Area</button></a>
+
+		{% endif %}
+		<!--<h1>{{post.title}}</h1>
+		<p>{{post.text|linebreaksbr}}
+			{% if post.photo %}
+				<img class="image" src="{{post.photo.url}}" alt="..."/>
+			{% endif %}
+		</p>-->
+	</div>
+
+{% endblock %}

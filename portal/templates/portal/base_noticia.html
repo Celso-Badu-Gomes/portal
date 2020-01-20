@@ -1,0 +1,20 @@
+{% extends 'portal/base.html' %} 
+{% block dinamico %}
+
+{% for post in posts %}
+	
+	<div>
+		<p>publicado em: {{post.published_date}}</p>
+		<p>publicado por: {{post.author}}</p>
+
+		<h2><a href="{% url 'post_detail_noticia' pk=post.pk %}">{{post.title}}</a></h2>
+		<p>{{post.text|linebreaksbr}}
+			
+			{% if post.photo %}
+				<img class="image" src="{{post.photo.url}}" alt="..."/>
+			{% endif %}	
+		</p>
+	</div>
+
+{% endfor %}
+{% endblock%}

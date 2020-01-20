@@ -1,0 +1,28 @@
+{% extends 'portal/base.html' %}
+{% block dinamico %}
+
+<a href="{% url 'post_new' %}"><button>Nova Area</button></a>
+<h1>Descrição da area</h1>
+
+{% for post in posts %}
+
+<div>
+    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.descricao}}</a></h2>
+    <h2><a href="{% url 'post_detail_noticia' pk=post.pk %}">{{post.title}}</a></h2>
+
+    <p class="texto">{{post.text|linebreaksbr}}
+        <p>{{post.area}}</p>
+
+        <p class>{{post.text|linebreaksbr}}
+            {% if post.photo %}
+            <img class="img3" src="{{post.photo.url}}" alt="..."/>
+            {% endif %} 
+        </p>
+    </p>
+</div>
+
+{% endfor %}
+{% endblock %}
+
+
+

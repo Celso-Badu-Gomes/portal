@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/portal.css' %}">
+</head>
+<body>
+	<div>
+		<h1 class="list"><img class="imagem" src="{% static 'imagens/logo.jpg' %}">Portal Araçá em foco</h1>
+	</div>
+
+	{% if user.is_authenticated == False %}
+	<a href="{% url 'post_visitante' %}"><button>Home</button></a><br><br>
+	{% endif %}
+
+	{% if user.is_authenticated %}
+	<a href="{% url 'post_list' %}"><button>Area</button></a>
+	<a href="{% url 'post_noticia' %}"><button>Noticia</button></a>
+	<a href="{% url 'post_list_noticia' %}"><button>Home</button></a>
+	{% endif %}
+	
+	{% block dinamico %}
+	{% endblock %}	
+
+	<center><footer class="rodape"><h5>&copy;Celso<h5/>Todos os direitos reservados</footer></center>
+</body>
+</html>
