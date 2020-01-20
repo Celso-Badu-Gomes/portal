@@ -107,10 +107,7 @@ def post_visitante(request):
 	areas = Area.objects.all()
 	
 	return render(request, 'portal/post_visitante.html', {'posts': posts, 'areas': areas}) 
-
-
-
-
+	
 '''def post_visitante(request):
 	try:
 		noticia_esporte = Noticia.objects.filter(area=area_verde)
