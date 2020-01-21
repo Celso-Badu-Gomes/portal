@@ -133,6 +133,7 @@ color: red;
     border: thin silver solid;
     margin: 0.5em;
     padding: 0.5em;
+    margin-top: 0px;
 }
 .detailNoticia{
     background-color: white;
