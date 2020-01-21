@@ -1,9 +1,11 @@
 {% extends 'portal/base.html' %}
 
 {% block dinamico %}
-
-<div>
+<body class="tela">
+<div class="detailNoticia">
 	<div>
+		<!-- usuario autenticado -->
+
 		{% if user.is_authenticated %}
 		{% if post.published_date %}
 		<div class="DatePublished">
@@ -12,24 +14,39 @@
 		{% endif %}
 		<center><br><br>
 			{% if post.photo %}
-			<img src="{{post.photo.url}}" alt="..."/>
+				<img class="image" src="{{post.photo.url}}" alt="..."/>
 			{% endif %}
 		</center>
 		{% endif %}
+
+		<!--_usuario nao autenticado -->
+		{% if user.is_authenticated == False %}
+			<div class="DatePublished">
+				{{post.published_date}}<br>
+				Pubicado por: {{post.author}}
+			</div>
+			<center><br><br>
+				{% if post.photo %}<br>
+					<img class="image" src="{{post.photo.url}}" alt="..."/>
+				{% endif %}
+			</center>
+		{% endif %}
+		<!------------------------------------------------------------------------>
 
 		<center><h1>{{post.title}}</h1></center>
 		<p>{{post.text|linebreaksbr}}<br><br><br></p>
 	</div>
 
 	{% if user.is_authenticated %}
-	<a class="btnEditN" href  ="{% url 'post_edit_noticia' pk=post.pk %}"><button>Editar Noticia</button></a>
-	<a onclick="return confirm('Tem certeza?')" href="{% url 'post_remove_noticia' pk=post.pk %}"><button>Deletar Noticia</button></a>
+		<a href="{% url 'post_edit_noticia' pk=post.pk %}"><button>Editar Noticia</button></a>
+		<a onclick="return confirm('Tem certeza?')" href="{% url 'post_remove_noticia' pk=post.pk %}"><button>Deletar Noticia</button></a>
 	{% endif %}
-
+		
 	{% if post.published_date == null %} 
-	<a class="btnDeleteN" href="{% url 'post_publicar_noticia' pk=post.pk %}"><button>Publicar</button></a>
+		<a href="{% url 'post_publicar_noticia' pk=post.pk %}"><button>Publicar</button></a>
 	{% endif %}
 
 </div>
-
 {% endblock %}
+
+</body>

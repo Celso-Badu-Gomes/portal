@@ -8,9 +8,9 @@
 			{% for post in posts %} 
 				{% if post.area.pk == area.pk %}
 					{% if post.published_date %}
-						<h3><a style="color: {{ area.cor }};" href="{% url 'post_detail_noticia' pk=post.pk %}"> {{post.title }}<a></h3>
+						<h3><a href="{% url 'post_detail_noticia' pk=post.pk %}"> {{post.title }}<a></h3>
 						{% if post.photo %}
-        					<img class="image" src="{{post.photo.url}}" alt="..."/><br><br>
+        					<img class="image_visitante" src="{{post.photo.url}}" alt="..."/><br><br>
         				{% endif %}					
 					{% endif %} 
 				{% endif %}
